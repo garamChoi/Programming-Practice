@@ -1,0 +1,18 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+int main(void)
+{
+	char voca[100];
+	int len = 0;
+
+	printf("English Vocabrary Insert : ");
+	scanf("%s", voca);
+
+	while (voca[len] != 0)
+		len++;
+
+	printf("Inserted English Vocabrary length? :%d \n", len);
+
+	return 0;
+}
