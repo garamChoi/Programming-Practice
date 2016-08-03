@@ -1,0 +1,69 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+
+void WriteRecord(void); // define function
+void WriteSumRecord(void); // define function
+void showallrecord(void); // define function
+
+int record[5][5];  // initialization to 0 value automatically because this array defines global variable 
+
+int main(void)  // main function is composed of a variety of function in detail
+{
+	WriteRecord();
+	WriteSumRecord();
+	showallrecord();
+
+	return 0;
+}
+
+void WriteRecord(void)
+{
+	int i, j;
+	int sum=0; // Sum of grade by students
+
+	for (i = 0; i < 4; i++)
+	{
+		sum = 0;
+		printf("%d번째 학생의 성적 입력 \n", i + 1);
+		for (j = 0; j < 4; j++)
+		{
+			printf("과목 %d : ", j + 1);
+			scanf("%d", &record[i][j]);
+			sum += record[i][j];
+		}
+		record[i][4] = sum;
+	}
+}
+
+void WriteSumRecord(void)
+{
+	int sum = 0; //Sum of grade by subjects 
+	int i, j;
+
+	for (i = 0; i < 4; i++)
+	{
+		sum = 0;
+		for (j = 0; j < 4; j++)
+		{
+			sum += record[j][i];
+		}
+		record[4][i] = sum;
+		record[4][4] += sum;
+	}
+}
+// previously entered record can show all the records of totol summation
+void showallrecord(void)
+{
+	int i, j;
+
+	for (i = 0; i < 5; i++)
+	{
+		for (j = 0; j < 5; j++)
+		{
+			printf("%3d", record[i][j]);
+		}
+		printf("\n");
+	}
+}
