@@ -1,0 +1,32 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <math.h>
+#include <time.h>
+
+int ConToInt(char c)
+{
+	static int diff = 1 - '1';
+	return c+diff;
+}
+
+int main(void)
+{	
+	char str[50];
+	int len, i;
+	int sum = 0;
+
+	printf("문자열 입력: ");
+	fgets(str, sizeof(str), stdin);
+	len = strlen(str);
+
+	for (i = 0; i < len; i++)
+	{
+		if ('1' <= str[i] && str[i] <= '9')
+			sum += ConToInt(str[i]);
+	}
+	printf("숫자의 총 합: %d \n", sum);
+
+	return 0;
+}
