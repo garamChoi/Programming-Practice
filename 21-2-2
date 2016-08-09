@@ -1,0 +1,28 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <math.h>
+#include <time.h>
+
+int main(void)
+{
+	char str1[20];
+	char str2[20];
+	char str3[40];
+
+	printf("첫 번째 문자열 입력: ");   // 첫 번째 문자 입력 받는다.
+	fgets(str1, sizeof(str1), stdin);
+	str1[strlen(str1) - 1] = 0;    // 널을 입력받지 않게 하기 위한 것
+
+	printf("두 번째 문자열 입력: ");  // 두 번째 문자 입력받는다.
+	fgets(str2, sizeof(str2), stdin);
+	str2[strlen(str2) - 1] = 0;  // 두 번쨰 입력된 것 또한 널문자 입력받지 않게 하기 위한 것
+
+	strcpy(str3, str1);    // 공간에 문자를 복사하는 것
+	strcat(str3, str2);    // 공간에 문자열을 덧붙이는 것
+
+	printf("출력 결과 : %s \n", str3);
+
+	return 0;
+}
