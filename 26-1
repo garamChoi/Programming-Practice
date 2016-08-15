@@ -1,0 +1,17 @@
+#define _CRT_SECURE_NO_WARNINGS
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
+ #include <math.h>
+ #include <time.h>
+
+#define ADD(x, y, z) ((x)+(y)+(z))
+#define MUL(x, y, z) ((x)*(y)*(z))
+
+int main(void)
+{
+	printf("%d \n", ADD(10, 65, 175));
+	printf("%d \n", MUL(10, 65, 075));
+
+	return 0;
+}
