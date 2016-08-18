@@ -1,0 +1,43 @@
+#define _CRT_SECURE_NO_WARNINGS
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
+ #include <math.h>
+ #include <time.h>
+
+
+int main(void)
+{
+	int i, j, k;
+	int money;
+	int price1, price2, price3;
+
+	
+	printf("현재 당신이 소유하고 있는 금액 : ");
+	scanf("%d", &money);
+
+	printf("마우스의 가격은 : ");
+	scanf("%d", &price1);
+
+	printf("키보드의 가격은 : ");
+	scanf("%d", &price2);
+
+	printf("이어폰의 가격은 : ");
+	scanf("%d", &price3);
+
+	for (i = 0; i <= money/price1; i++)
+	{
+		for (j = 0; j<=money/price2; j++)
+		{
+			for (k = 0; k<=money/price3; k++)
+			{
+				if ((i*price1 + j*price2 + k*price3) == money )
+					printf("마우스 %d개, 키보드 %d개, 이어폰 %d개 \n", i, j, k);
+			}
+		}
+	}
+
+	printf("어떻게 구입하시겠습니까? \n");
+
+	return 0;
+}
