@@ -1,0 +1,33 @@
+#define _CRT_SECURE_NO_WARNINGS
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
+ #include <math.h>
+ #include <time.h>
+
+
+int main(void)
+{
+	int i, j, k;
+
+	int C = 500, S = 700, K = 400;
+	int CN = 1, SN = 1, KN = 1;
+
+	printf("현재 당신이 소유하고 있는 금액 : 3500 \n");
+
+	for (i = 0; i <= 3; i++)
+	{
+		for (j = 0; j <= 2; j++)
+		{
+			for (k = 0; k <= 4; k++)
+			{
+				if (i*C + j*S + k*K == 1900)
+					printf("크림빵 %d개, 크림빵 %d개, 크림빵 %d개 \n", i+1, j+1, k+1);
+			}
+		}
+	}
+
+	printf("어떻게 구입하시겠습니까? \n");
+
+	return 0;
+}
