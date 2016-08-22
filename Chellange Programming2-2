@@ -1,0 +1,45 @@
+#define _CRT_SECURE_NO_WARNINGS
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
+ #include <math.h>
+ #include <time.h>
+
+int main(void)
+{
+	int num;
+	int remainder[100];
+	int i=0;
+	int j;
+	int temp=0;
+
+	printf("10진수 정수 입력 : ");
+	scanf("%d", &num);
+
+	temp = num;
+	
+	while (num>=2)
+	{
+		remainder[i] = num % 2;
+		num = num / 2;
+		i++;
+
+		if (2 > num)
+		{
+			remainder[i] = num;
+			break;
+		}
+	}
+	printf("10진수 : ");
+	for (j = i; j>=0 ; j--)
+	{
+		printf("%d", remainder[j]);
+	}
+	printf("\n");
+	printf("8진수 : %o \n", temp);
+	printf("16진수 : %x \n", temp);
+
+	printf("\n");
+
+	return 0;
+}
